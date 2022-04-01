@@ -31,7 +31,7 @@ services:
     volumes:
       - ./nginx.conf.prod:/etc/nginx/conf.d/nginx.conf
     depends_on:
-      - api
+      - service
   postgres:
     container_name: postgres
     image: postgres:13.3-alpine
