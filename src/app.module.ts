@@ -15,7 +15,7 @@ require("dotenv").config()
       host: process.env.DB_HOST,
       port: +process.env.DB_PORT,
       username: process.env.DB_USERNAME,
-      password: process.env.DB_PASSWORD,
+      password: '12345',
       database: process.env.DB_NAME,
       entities: [User, Role, Auth],
       synchronize: true,
