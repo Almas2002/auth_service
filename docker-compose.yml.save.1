@@ -36,16 +36,22 @@ services:
     container_name: postgres
     image: postgres:13.3-alpine
     environment:
-     - POSTGRES_DD=auth
-     - POSTGRES_USER=postgres1
-     - POSTGRES_PASSWORD=12345
-     - PGDATA=/var/lib/postgresql/data/pgdata
+      POSTGRES_DB: auth
+      POSTGRES_USER: postgres2
+      POSTGRES_PASSWORD: 12345
+      PGDATA: /var/lib/postgresql/data/pgdata
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/dat
+   postgres:
+    image: postgres:9.3
     ports:
-      - "5432:5432"
-    restart: always
-
+    - "5432:5432"
+    environment:
+      - POSTGRES_USER=test
+      - POSTGRES_PASSWORD=test
+      - POSTGRES_DB=test_db
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
 volumes:
   pgdata:
   redis_data:

@@ -31,20 +31,7 @@ services:
     volumes:
       - ./nginx.conf.prod:/etc/nginx/conf.d/nginx.conf
     depends_on:
-      - service
-  postgres:
-    container_name: postgres
-    image: postgres:13.3-alpine
-    environment:
-     - POSTGRES_DD=auth
-     - POSTGRES_USER=postgres1
-     - POSTGRES_PASSWORD=12345
-     - PGDATA=/var/lib/postgresql/data/pgdata
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
-    restart: always
+      -
 
 volumes:
   pgdata:
