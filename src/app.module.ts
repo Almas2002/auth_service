@@ -12,11 +12,11 @@ require("dotenv").config()
     AuthModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: process.env.DB_HOST,
-      port: +process.env.DB_PORT,
-      username: process.env.DB_USERNAME,
+      host:'postgres',
+      port: 5432,
+      username: 'postgres',
       password: '12345',
-      database: process.env.DB_NAME,
+      database:'auth',
       entities: [User, Role, Auth],
       synchronize: true,
     })

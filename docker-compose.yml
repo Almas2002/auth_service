@@ -36,10 +36,10 @@ services:
     container_name: postgres
     image: postgres:13.3-alpine
     environment:
-     - POSTGRES_DD=auth
-     - POSTGRES_USER=postgres1
-     - POSTGRES_PASSWORD=12345
-     - PGDATA=/var/lib/postgresql/data/pgdata
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=12345
+      - POSTGRES_DB=auth
+      - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
       - pgdata:/var/lib/postgresql/data
     ports:
