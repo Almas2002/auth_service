@@ -23,7 +23,7 @@ export class AuthController {
   async refreshToken(refresh_token:string){
     return this.authService.refresh(refresh_token)
   }
-  @MessagePattern({cmd:"create-super-user}"})
+  @MessagePattern({cmd:"create-super-user"})
   async createSuperUser(){
     const data = {
       phone:process.env.SUPER_ADMIN_PHONE,
