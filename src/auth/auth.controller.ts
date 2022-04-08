@@ -2,7 +2,7 @@ import { Controller } from '@nestjs/common';
 import { MessagePattern } from '@nestjs/microservices';
 import { UserLoginDto } from './dto/user-login.dto';
 import { AuthService } from './auth.service';
-
+require('dotenv').config()
 @Controller()
 export class AuthController {
   constructor(private authService:AuthService) {}
@@ -23,7 +23,7 @@ export class AuthController {
   async refreshToken(refresh_token:string){
     return this.authService.refresh(refresh_token)
   }
-  @MessagePattern({cmd:"create-super-user}"})
+  @MessagePattern({cmd:"create-super-user"})
   async createSuperUser(){
     const data = {
       phone:process.env.SUPER_ADMIN_PHONE,
