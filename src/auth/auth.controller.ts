@@ -2,7 +2,7 @@ import { Controller } from '@nestjs/common';
 import { MessagePattern } from '@nestjs/microservices';
 import { UserLoginDto } from './dto/user-login.dto';
 import { AuthService } from './auth.service';
-
+require('dotenv').config()
 @Controller()
 export class AuthController {
   constructor(private authService:AuthService) {}
